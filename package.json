@@ -1,6 +1,6 @@
 {
   "name": "vue-animated-list",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Vue.js plugin for easily animating `v-for` rendered lists.",
   "main": "vue-animated-list.js",
   "files": [
