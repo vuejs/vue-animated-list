@@ -51,3 +51,7 @@ A few things to note:
 1. The animation is done using the CSS `transform` property. So make sure when `.item-move` is applied its `transform` property is transition-enabled.
 
 2. Move animations can only work on elements, so it doesn't work for `<template v-for>` and fragment instance components.
+
+## How Does It Work?
+
+This is inspired by [this great post by Joshua Comeau](https://medium.com/@joshuawcomeau/animating-the-unanimatable-1346a5aab3cd#.sen3tgomb), which is in turn based on the [FLIP technique by Paul Lewis](https://aerotwist.com/blog/flip-your-animations/). So read those if you are interested in the technical details!
