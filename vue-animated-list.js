@@ -84,7 +84,9 @@
         var dy = oldPos.top - newPos.top
         if (dx !== 0 || dy !== 0) {
           frag.moved = true
-          node.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)'
+          node.style.transform =
+          node.style.WebkitTransform =
+            'translate(' + dx + 'px, ' + dy + 'px)'
           node.style.transitionDuration = '0s'
         } else {
           frag.moved = false
@@ -97,7 +99,7 @@
           var moveClass = node.__v_trans.id + '-move'
           if (frag.moved) {
             addClass(node, moveClass)
-            node.style.transform = ''
+            node.style.transform = node.style.WebkitTransform = ''
             node.style.transitionDuration = ''
             if (node._pendingMoveCb) {
               off(node, transitionEndEvent, node._pendingMoveCb)
