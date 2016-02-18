@@ -36,11 +36,14 @@
   </head>
   <body>
 
+    <p style="max-width: 500px">
+      This is a demo of the <a href="https://github.com/vuejs/vue-animated-list">vue-animated-list</a> plugin. It doesn't require any changes to how data is manipulated in JavaScript - just add a CSS class and you get smooth 60fps animations. <a href="https://github.com/vuejs/vue-animated-list/blob/master/example.html">Source</a>
+    </p>
+
     <div id="el">
       <button @click="shuffle">shuffle</button>
       <button @click="add">add</button>
       <button @click="remove">remove</button>
-      <a href="https://github.com/vuejs/vue-animated-list/blob/master/example.html">Source</a>
       <div class="container">
         <div class="item"
           v-for="item in items"
