@@ -1,0 +1,24 @@
+{
+  "name": "vue-animated-list",
+  "version": "1.0.0",
+  "description": "A Vue.js plugin for easily animating `v-for` rendered lists.",
+  "main": "vue-animated-list.js",
+  "files": [
+    "vue-animated-list.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vue-animated-list.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "animation"
+  ],
+  "author": "Evan You",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vuejs/vue-animated-list/issues"
+  },
+  "homepage": "https://github.com/vuejs/vue-animated-list#readme"
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue animated list example</title>
+    <script src="https://cdn.jsdelivr.net/lodash/4.3.0/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue/1.0.16/vue.min.js"></script>
+    <script src="./vue-animated-list.js"></script>
+    <style>
+    .container {
+      width: 300px;
+    }
+    .item {
+      box-sizing: border-box;
+      background-color: #eee;
+      border: 1px solid black;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+    }
+    .item-transition {
+      transition: opacity .5s ease;
+    }
+    .item-enter {
+      opacity: 0;
+    }
+    .item-leave {
+      opacity: 0;
+      position: absolute; /* important for removal move to work */
+    }
+    .item-move {
+      color: red;
+      transition: transform .5s cubic-bezier(.55,0,.1,1); /* applied when moving */
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="el">
+      <button @click="shuffle">shuffle</button>
+      <button @click="add">add</button>
+      <button @click="remove">remove</button>
+      <div class="container">
+        <div class="item"
+          v-for="item in items"
+          transition="item">
+          {{item.text}}
+        </div>
+      </div>
+    </div>
+
+    <script>
+    var items = []
+    for (var i = 0; i < 9; i++) {
+      items.push({ text: i })
+    }
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        items: items
+      },
+      methods: {
+        shuffle: function () {
+          this.items = _.shuffle(this.items)
+        },
+        add: function () {
+          this.items.unshift({ text: this.items.length })
+        },
+        remove: function () {
+          this.items.shift()
+        }
+      }
+    })
+    </script>
+  </body>
+</html>
