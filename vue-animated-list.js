@@ -10,6 +10,7 @@
     var removeClass = _.removeClass
     var on = _.on
     var off = _.off
+    var transitionProp = _.transitionProp
 
     // patch v-for
     var vFor = Vue.directive('for')
@@ -39,15 +40,22 @@
         var node = frags[0].node
         var moveClass = transition.id + '-move'
         var moving = node._pendingMoveCb
-        var type
+        var hasTransition = false
         if (!moving) {
           // sniff whether element has a transition duration for transform
           // with the move class applied
           addClass(node, moveClass)
-          type = transition.getCssTransitionType(moveClass, true)
+          var type = transition.getCssTransitionType(moveClass)
+          if (type === 'transition') {
+            var computedStyles = window.getComputedStyle(node)
+            var transitionedProps = computedStyles[transitionProp + 'Property']
+            if (/\btransform(,|$)/.test(transitionedProps)) {
+              hasTransition = true
+            }
+          }
           removeClass(node, moveClass)
         }
-        if (moving || type === 'transition') {
+        if (moving || hasTransition) {
           frags.forEach(function (frag) {
             frag._oldPos = frag.node.getBoundingClientRect()
           })
