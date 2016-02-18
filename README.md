@@ -2,6 +2,8 @@
 
 A Vue.js plugin for easily animating `v-for` rendered lists.
 
+[Live Demo](http://vuejs.github.io/vue-animated-list/example.html)
+
 ## Installation
 
 - #### With Modules
