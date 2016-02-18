@@ -4,6 +4,8 @@ A Vue.js plugin for easily animating `v-for` rendered lists.
 
 [Live Demo](http://vuejs.github.io/vue-animated-list/example.html)
 
+Compatibility: [IE10+](http://caniuse.com/#search=css%20transition).
+
 ## Installation
 
 - #### With Modules
