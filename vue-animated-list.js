@@ -48,7 +48,7 @@
           removeClass(node, moveClass)
         }
         if (moving || type === 'transition') {
-          frags.forEach(frag => {
+          frags.forEach(function (frag) {
             frag._oldPos = frag.node.getBoundingClientRect()
           })
           return true
@@ -84,7 +84,7 @@
         var dy = oldPos.top - newPos.top
         if (dx !== 0 || dy !== 0) {
           frag.moved = true
-          node.style.transform = `translate(${dx}px, ${dy}px)`
+          node.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)'
           node.style.transitionDuration = '0s'
         } else {
           frag.moved = false
