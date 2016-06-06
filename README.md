@@ -55,3 +55,7 @@ A few things to note:
 ## How Does It Work?
 
 This is inspired by [this great post by Joshua Comeau](https://medium.com/@joshuawcomeau/animating-the-unanimatable-1346a5aab3cd#.sen3tgomb), which is in turn based on the [FLIP technique by Paul Lewis](https://aerotwist.com/blog/flip-your-animations/). So read those if you are interested in the technical details!
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
