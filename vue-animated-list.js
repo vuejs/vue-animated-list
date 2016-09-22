@@ -74,6 +74,9 @@
 
     function applyMoveTransition (frags) {
       frags.forEach(function (frag) {
+        frag._newPos = frag.node.getBoundingClientRect()
+      })
+      frags.forEach(function (frag) {
         var node = frag.node
         var oldPos = frag._oldPos
         if (!oldPos) return
@@ -87,9 +90,8 @@
           p.removeChild(node)
           p.insertBefore(node, next)
         }
-        var newPos = node.getBoundingClientRect()
-        var dx = oldPos.left - newPos.left
-        var dy = oldPos.top - newPos.top
+        var dx = oldPos.left - frag._newPos.left
+        var dy = oldPos.top - frag._newPos.top
         if (dx !== 0 || dy !== 0) {
           frag.moved = true
           node.style.transform =
