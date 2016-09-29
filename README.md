@@ -1,5 +1,7 @@
 # vue-animated-list
 
+> **NOTE:** this plugin is for Vue 1.x only. Vue 2.0 supports moving animations out of the box.
+
 A Vue.js plugin for easily animating `v-for` rendered lists.
 
 [Live Demo](http://vuejs.github.io/vue-animated-list/example.html)
